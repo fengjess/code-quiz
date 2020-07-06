@@ -22,5 +22,5 @@ if (allScores !== null) {
 }
 
 goBack.addEventListener("click", function () {
-    window.location.replace("code-quiz/index.html");
+    window.location.replace("../code-quiz/index.html");
 });
