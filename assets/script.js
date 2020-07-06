@@ -1,6 +1,7 @@
 var score = 0;
 var questionIndex = 0;
-
+var soundCorrect = new Audio("assets/correct.wav"); 
+var soundWrong = new Audio("assets/wrong.wav"); 
 
 var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
@@ -53,10 +54,12 @@ function compare(event) {
         createDiv.setAttribute("id", "createDiv");
         
         if (element.textContent == questions[questionIndex].answer) {
+            soundCorrect.play();
             score++;
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
             
         } else {
+            soundWrong.play();
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
         }
