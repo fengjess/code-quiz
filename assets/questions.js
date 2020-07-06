@@ -1,4 +1,4 @@
-  
+// Questions, choices, and answers used for quiz
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",

@@ -7,12 +7,12 @@ var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#startTime");
 var questionsDiv = document.querySelector("#questionsDiv");
 
-
 var secondsLeft = 76;
 var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
+// Timer when starting application upon click
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
@@ -29,6 +29,7 @@ timer.addEventListener("click", function () {
     render(questionIndex);
 });
 
+// Displays questions and choices
 function render(questionIndex) {
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
@@ -45,6 +46,8 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+// Shows user whether selection is correct or ircorrect with sound effects
 function compare(event) {
     var element = event.target;
 
@@ -76,6 +79,8 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 
 }
+
+// Final score page with form to input user's initals
 function allDone() {
     questionsDiv.innerHTML = "";
     currentTime.innerHTML = "";
@@ -120,6 +125,7 @@ function allDone() {
 
     questionsDiv.appendChild(createSubmit);
 
+    // User's submission will be recorded and displayed in highscores page upon click
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
